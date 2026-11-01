@@ -64,9 +64,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
-              Reliable property maintenance, preservation, repairs, and field
-              services for residential and commercial properties in Metro
-              Atlanta.
+              Property maintenance, preservation, repairs, and field services
+              for homes and commercial buildings across Metro Atlanta.
             </p>
           </div>
 

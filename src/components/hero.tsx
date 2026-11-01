@@ -25,14 +25,14 @@ export function Hero() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-white leading-[1.1] tracking-tight text-balance">
-            Professional Property Maintenance &amp; Preservation Solutions
+            Property Maintenance, Preservation, and Repairs Done Right
           </h1>
 
           <p className="mt-5 text-base md:text-lg text-white/70 leading-relaxed max-w-xl">
-            Bluestone Home Solutions LLC delivers dependable property
-            maintenance, preservation, repairs, and improvement services. From
-            routine upkeep to comprehensive property restoration, we help
-            property owners and managers protect their investments.
+            Bluestone Home Solutions LLC handles property maintenance,
+            preservation, repairs, and improvements across Metro Atlanta.
+            Whether you need routine upkeep or a full property restoration,
+            we get the job done.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

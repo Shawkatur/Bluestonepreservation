@@ -11,7 +11,7 @@ export const services: ServiceCategory[] = [
     id: "preservation",
     title: "Property Preservation",
     description:
-      "Protect vacant and managed properties with securing, winterization, and ongoing preservation services.",
+      "We secure, winterize, and maintain vacant and managed properties so they stay in good shape.",
     icon: "Shield",
     items: [
       "Property securing",
@@ -19,14 +19,14 @@ export const services: ServiceCategory[] = [
       "Boarding & emergency securing",
       "Winterization & de-winterization",
       "Vacancy maintenance",
-      "General preservation work",
+      "Other preservation work",
     ],
   },
   {
     id: "maintenance",
     title: "Property Maintenance",
     description:
-      "Keep properties in top condition with routine upkeep, landscaping, gutter cleaning, and seasonal care.",
+      "Regular upkeep to keep your property looking right: lawn care, landscaping, gutter cleaning, and seasonal work.",
     icon: "Home",
     items: [
       "Routine property maintenance",
@@ -41,7 +41,7 @@ export const services: ServiceCategory[] = [
     id: "repairs",
     title: "Repairs & Renovations",
     description:
-      "Handle interior and exterior repairs, from drywall and painting to flooring and general rehabilitation.",
+      "Inside and out, we handle it: drywall, painting, flooring, doors, windows, siding, and more.",
     icon: "Wrench",
     items: [
       "Drywall repair",
@@ -49,14 +49,14 @@ export const services: ServiceCategory[] = [
       "Flooring installation",
       "Door & window repairs",
       "Siding & fence repairs",
-      "General property rehabilitation",
+      "Full property rehab",
     ],
   },
   {
     id: "debris",
     title: "Debris Removal & Cleanup",
     description:
-      "Clear properties quickly with trash-outs, estate cleanups, yard debris removal, and turnover preparation.",
+      "We clear out properties fast: trash outs, estate cleanups, yard debris, and getting units ready for new tenants.",
     icon: "Trash2",
     items: [
       "Interior & exterior debris removal",
@@ -64,29 +64,29 @@ export const services: ServiceCategory[] = [
       "Foreclosure cleanup",
       "Estate & rental property cleanup",
       "Yard cleanup",
-      "Property turnover preparation",
+      "Move out and turnover prep",
     ],
   },
   {
     id: "inspections",
     title: "Property Inspections",
     description:
-      "Document property conditions with occupancy checks, maintenance inspections, and detailed photo reports.",
+      "We check on properties, document their condition, and send you photos and reports so you know exactly what's going on.",
     icon: "ClipboardCheck",
     items: [
       "Occupancy inspections",
       "Vacancy checks",
-      "Property condition assessments",
+      "Property condition reports",
       "Maintenance inspections",
       "Exterior inspections",
-      "Photo documentation & reporting",
+      "Photo reports",
     ],
   },
   {
     id: "emergency",
     title: "Emergency & Specialty Services",
     description:
-      "Respond fast to urgent property needs including board-ups, roof tarping, storm damage, and hazard removal.",
+      "When something goes wrong, we move fast: board ups, roof tarping, storm damage cleanup, and hazard removal.",
     icon: "AlertTriangle",
     items: [
       "Emergency board-ups",
@@ -94,7 +94,7 @@ export const services: ServiceCategory[] = [
       "Storm damage cleanup",
       "Hazard removal",
       "Emergency securing",
-      "Urgent property protection",
+      "Urgent property needs",
     ],
   },
 ];
@@ -222,49 +222,49 @@ export const clientTypes: ClientType[] = [
   {
     title: "Homeowners",
     description:
-      "Dependable maintenance, repairs, and improvements to protect your home and property value.",
+      "We take care of the maintenance, repairs, and upgrades so your home stays in great shape.",
     icon: "Home",
   },
   {
     title: "Property Management Companies",
     description:
-      "Responsive service coordination for routine maintenance, tenant turnovers, and property upkeep.",
+      "One call for routine maintenance, tenant turnovers, and keeping your properties in good condition.",
     icon: "Building2",
   },
   {
     title: "Real Estate Investors",
     description:
-      "Cost-effective property preservation and rehabilitation to maintain and improve investment assets.",
+      "Preservation and rehab work that keeps your investment properties in shape without breaking the budget.",
     icon: "TrendingUp",
   },
   {
     title: "Banks & Mortgage Servicers",
     description:
-      "Reliable property preservation, securing, and maintenance for REO and pre-foreclosure assets.",
+      "We handle preservation, securing, and upkeep for REO and foreclosure properties.",
     icon: "Landmark",
   },
   {
     title: "Asset Management Companies",
     description:
-      "Organized field services with detailed documentation and consistent communication across portfolios.",
+      "Field services with clear reports and good communication, no matter how many properties you manage.",
     icon: "Briefcase",
   },
   {
     title: "National Field Service Companies",
     description:
-      "Local execution for national service networks with dependable coverage in the Atlanta metro area.",
+      "Boots on the ground in Atlanta for national service networks. We show up and get the work done.",
     icon: "Globe",
   },
   {
     title: "REO Property Managers",
     description:
-      "Comprehensive preservation, inspections, and maintenance services for bank-owned properties.",
+      "Full preservation, inspections, and maintenance for bank owned properties.",
     icon: "FileCheck",
   },
   {
     title: "Commercial Property Owners",
     description:
-      "Professional maintenance, repairs, and exterior services for commercial properties and facilities.",
+      "Maintenance, repairs, and exterior work for commercial buildings and facilities.",
     icon: "Building",
   },
 ];

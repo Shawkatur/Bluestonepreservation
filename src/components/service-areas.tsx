@@ -136,8 +136,8 @@ export function ServiceAreas() {
 
               <div className="mt-6 pt-4 border-t border-gray-100">
                 <p className="text-xs text-slate leading-relaxed">
-                  Don&apos;t see your area listed? Contact us — we may be able
-                  to help with your property needs.
+                  Don&apos;t see your area listed? Reach out to us. We may be
+                  able to help with your property needs.
                 </p>
               </div>
             </div>

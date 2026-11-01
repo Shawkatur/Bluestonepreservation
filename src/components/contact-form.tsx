@@ -74,11 +74,11 @@ export function ContactForm() {
             Contact
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy tracking-tight text-balance">
-            Let&apos;s Discuss Your Property Needs
+            Get a Free Estimate
           </h2>
           <p className="mt-3 text-slate text-base md:text-lg leading-relaxed">
-            Request a free, no-obligation estimate. We respond to all inquiries
-            within 24 hours.
+            Fill out the form and we will get back to you within 24 hours. No
+            strings attached.
           </p>
         </div>
 

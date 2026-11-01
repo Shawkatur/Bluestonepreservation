@@ -33,11 +33,11 @@ export function WhoWeWorkWith() {
             Our Clients
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy tracking-tight text-balance">
-            Property Solutions for Every Type of Client
+            Who We Work With
           </h2>
           <p className="mt-3 text-slate text-base md:text-lg leading-relaxed">
-            We work with a range of property stakeholders, tailoring our
-            services to each client&apos;s priorities and requirements.
+            From homeowners to national service companies, we work with all
+            kinds of property clients across Metro Atlanta.
           </p>
         </div>
 

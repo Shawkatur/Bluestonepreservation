@@ -45,24 +45,22 @@ export function About() {
               About Us
             </p>
             <h2 className="text-2xl md:text-3xl lg:text-[2.1rem] font-bold text-navy tracking-tight text-balance mb-5">
-              Dedicated to Protecting &amp; Improving Your Property
+              We Take Care of Your Property
             </h2>
             <div className="space-y-4 text-slate text-[0.95rem] leading-relaxed">
               <p>
-                Bluestone Home Solutions LLC is an Atlanta-based property
-                services company focused on delivering practical, dependable
-                solutions for residential and commercial properties.
+                Bluestone Home Solutions LLC is a property services company
+                based in Atlanta, Georgia. We work on residential and
+                commercial properties, and we do the job right.
               </p>
               <p>
-                We understand the importance of protecting property value,
-                maintaining safe conditions, and completing work with attention
-                to detail.
+                Keeping a property in good shape matters. We pay attention to
+                the details and make sure the work gets done the way it should.
               </p>
               <p>
-                Whether supporting individual property owners, real estate
-                investors, or property management organizations, we aim to build
-                long-term relationships through consistent service and
-                professional accountability.
+                We work with homeowners, real estate investors, and property
+                managers. Our goal is simple: do good work, keep you informed,
+                and be the team you can count on.
               </p>
             </div>
 

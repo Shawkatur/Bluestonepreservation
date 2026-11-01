@@ -13,39 +13,39 @@ import {
 const features = [
   {
     icon: UserCheck,
-    title: "Single Point of Contact",
+    title: "One Team, One Call",
     description:
-      "Simplify project coordination through one dependable service partner.",
+      "You deal with one crew for all your property work. No juggling contractors.",
   },
   {
     icon: MessageSquare,
-    title: "Reliable Communication",
+    title: "We Keep You in the Loop",
     description:
-      "Clear service requests, updates, and communication throughout the process.",
+      "You'll know what's happening with your property every step of the way.",
   },
   {
     icon: Layers,
-    title: "Comprehensive Solutions",
+    title: "We Handle All of It",
     description:
-      "Access coordinated maintenance, repairs, preservation, and improvement services.",
+      "Maintenance, repairs, preservation, cleanups, and more, all under one roof.",
   },
   {
     icon: FileText,
-    title: "Detailed Documentation",
+    title: "Photos and Reports",
     description:
-      "Organized service records, before-and-after photos, and transparent reporting.",
+      "We document everything: before and after photos, service records, and condition reports.",
   },
   {
     icon: CheckSquare,
-    title: "Attention to Quality",
+    title: "Quality Work",
     description:
-      "Focus on proper workmanship, property condition, and consistent results.",
+      "We do the job right the first time and make sure it holds up.",
   },
   {
     icon: HeartHandshake,
-    title: "Customer-Focused Service",
+    title: "Built Around You",
     description:
-      "Adapt solutions to the priorities of homeowners, property managers, and commercial clients.",
+      "Whether you're a homeowner, property manager, or investor, we work around your needs.",
   },
 ];
 
