@@ -37,7 +37,7 @@ const config: Config = {
         },
         "light-bg": "#F5F7FA",
         accent: "#D9E5EF",
-        copper: "#C4873B",
+        amber: "#D99A45",
       },
       fontFamily: {
         sans: [

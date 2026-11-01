@@ -35,7 +35,7 @@ export function Footer() {
                 fill="none"
                 aria-hidden="true"
               >
-                <rect x="2" y="6" width="12" height="20" rx="2" fill="#C4873B" />
+                <rect x="2" y="6" width="12" height="20" rx="2" fill="#356B94" />
                 <rect
                   x="18"
                   y="6"
@@ -51,13 +51,17 @@ export function Footer() {
                   width="12"
                   height="12"
                   rx="2"
-                  fill="#356B94"
+                  fill="#12243A"
                 />
               </svg>
-              <span className="font-semibold text-sm text-white tracking-tight">
-                BLUESTONE{" "}
-                <span className="text-bluestone-200">HOME</span>
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-white font-bold text-[0.9rem] tracking-tight">
+                  BLUESTONE
+                </span>
+                <span className="text-bluestone-200 font-medium text-[0.55rem] tracking-[0.08em] uppercase">
+                  Home Solutions
+                </span>
+              </div>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
               Reliable property maintenance, preservation, repairs, and field
