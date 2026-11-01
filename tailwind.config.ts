@@ -32,7 +32,7 @@ const config: Config = {
           900: "#0A151E",
         },
         slate: {
-          DEFAULT: "#657586",
+          DEFAULT: "#596878",
           350: "#8A97A6",
         },
         "light-bg": "#F5F7FA",
