@@ -5,12 +5,12 @@ import { Menu, X, Mail } from "lucide-react";
 import { company } from "@/lib/company";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About Us" },
-  { href: "#why", label: "Why Choose Us" },
-  { href: "#areas", label: "Service Areas" },
-  { href: "#portfolio", label: "Our Work" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#why", label: "Why Choose Us" },
+  { href: "/#areas", label: "Service Areas" },
+  { href: "/#portfolio", label: "Our Work" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -34,7 +34,7 @@ export function Navbar() {
       <div className="container-main">
         <div className="flex h-16 items-center justify-between md:h-[72px]">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 flex-shrink-0">
+          <a href="/" className="flex items-center gap-2.5 flex-shrink-0">
             <svg
               width="32"
               height="32"
@@ -83,7 +83,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className="inline-flex items-center gap-2 bg-bluestone hover:bg-bluestone-400 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
             >
               <Mail className="w-4 h-4" />
@@ -118,7 +118,7 @@ export function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 bg-bluestone text-white text-sm font-semibold px-5 py-3 rounded-lg"
             >

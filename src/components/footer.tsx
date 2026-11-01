@@ -2,12 +2,12 @@ import { company } from "@/lib/company";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
 
 const quickLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About Us" },
-  { href: "#why", label: "Why Choose Us" },
-  { href: "#areas", label: "Service Areas" },
-  { href: "#portfolio", label: "Our Work" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#why", label: "Why Choose Us" },
+  { href: "/#areas", label: "Service Areas" },
+  { href: "/#portfolio", label: "Our Work" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 const serviceLinks = [
@@ -98,7 +98,7 @@ export function Footer() {
               {serviceLinks.map((name) => (
                 <li key={name}>
                   <a
-                    href="#services"
+                    href="/#services"
                     className="text-sm hover:text-white transition-colors"
                   >
                     {name}
