@@ -337,7 +337,7 @@ export function ContactForm() {
                 </div>
 
                 {/* City, State, ZIP */}
-                <div className="grid grid-cols-5 gap-4 mb-4">
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-4">
                   <div className="col-span-2">
                     <label
                       htmlFor="city"
@@ -369,7 +369,7 @@ export function ContactForm() {
                       maxLength={2}
                     />
                   </div>
-                  <div className="col-span-2">
+                  <div className="col-span-1 sm:col-span-2">
                     <label
                       htmlFor="zip"
                       className="block text-xs font-semibold text-navy mb-1.5"

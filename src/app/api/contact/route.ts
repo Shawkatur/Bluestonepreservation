@@ -15,21 +15,43 @@ interface ContactPayload {
   contactMethod?: string;
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_WINDOW = 60_000;
+const RATE_LIMIT_MAX = 5;
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
   const entry = rateLimit.get(ip);
   if (!entry || now > entry.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + 60_000 });
+    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
     return true;
   }
-  if (entry.count >= 5) return false;
+  if (entry.count >= RATE_LIMIT_MAX) return false;
   entry.count++;
   return true;
 }
 
+// Prevent unbounded memory growth
+function pruneRateLimitMap() {
+  const now = Date.now();
+  if (rateLimit.size > 1000) {
+    rateLimit.forEach((val, key) => {
+      if (now > val.resetAt) rateLimit.delete(key);
+    });
+  }
+}
+
 export async function POST(request: NextRequest) {
+  pruneRateLimitMap();
+
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     "unknown";
@@ -71,42 +93,43 @@ export async function POST(request: NextRequest) {
     process.env.CONTACT_EMAIL || "service@bluestonehomellc.com";
 
   if (!apiKey) {
-    console.log("Contact form submission (Resend not configured):", body);
-    return NextResponse.json({
-      success: true,
-      message: "Request received. Email delivery is being configured.",
-    });
+    console.error("RESEND_API_KEY is not configured — form submission dropped");
+    return NextResponse.json(
+      { error: "Our contact system is temporarily unavailable. Please email us directly at service@bluestonehomellc.com." },
+      { status: 503 }
+    );
   }
 
   try {
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
 
+    const s = (v: string) => escapeHtml(v);
     await resend.emails.send({
       from: "Bluestone Home Solutions <onboarding@resend.dev>",
       to: contactEmail,
-      subject: `New Estimate Request from ${body.name}`,
+      subject: `New Estimate Request from ${s(body.name)}`,
       html: `
         <h2>New Estimate Request</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;">
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Name</td><td style="padding:8px;border:1px solid #ddd;">${body.name}</td></tr>
-          ${body.company ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Company</td><td style="padding:8px;border:1px solid #ddd;">${body.company}</td></tr>` : ""}
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;">${body.email}</td></tr>
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Phone</td><td style="padding:8px;border:1px solid #ddd;">${body.phone}</td></tr>
-          ${body.service ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Service</td><td style="padding:8px;border:1px solid #ddd;">${body.service}</td></tr>` : ""}
-          ${body.propertyType ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Property Type</td><td style="padding:8px;border:1px solid #ddd;">${body.propertyType}</td></tr>` : ""}
-          ${body.propertyAddress ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Property Address</td><td style="padding:8px;border:1px solid #ddd;">${body.propertyAddress}${body.city ? `, ${body.city}` : ""}${body.state ? `, ${body.state}` : ""} ${body.zip || ""}</td></tr>` : ""}
-          ${body.contactMethod ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Preferred Contact</td><td style="padding:8px;border:1px solid #ddd;">${body.contactMethod}</td></tr>` : ""}
-          ${body.message ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Message</td><td style="padding:8px;border:1px solid #ddd;">${body.message}</td></tr>` : ""}
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Name</td><td style="padding:8px;border:1px solid #ddd;">${s(body.name)}</td></tr>
+          ${body.company ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Company</td><td style="padding:8px;border:1px solid #ddd;">${s(body.company)}</td></tr>` : ""}
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;">${s(body.email)}</td></tr>
+          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Phone</td><td style="padding:8px;border:1px solid #ddd;">${s(body.phone)}</td></tr>
+          ${body.service ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Service</td><td style="padding:8px;border:1px solid #ddd;">${s(body.service)}</td></tr>` : ""}
+          ${body.propertyType ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Property Type</td><td style="padding:8px;border:1px solid #ddd;">${s(body.propertyType)}</td></tr>` : ""}
+          ${body.propertyAddress ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Property Address</td><td style="padding:8px;border:1px solid #ddd;">${s(body.propertyAddress)}${body.city ? `, ${s(body.city)}` : ""}${body.state ? `, ${s(body.state)}` : ""} ${body.zip ? s(body.zip) : ""}</td></tr>` : ""}
+          ${body.contactMethod ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Preferred Contact</td><td style="padding:8px;border:1px solid #ddd;">${s(body.contactMethod)}</td></tr>` : ""}
+          ${body.message ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Message</td><td style="padding:8px;border:1px solid #ddd;">${s(body.message)}</td></tr>` : ""}
         </table>
       `,
     });
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Email send failed:", error);
+    console.error("Email delivery failed:", error instanceof Error ? error.message : "Unknown error");
     return NextResponse.json(
-      { error: "Failed to send email. Please try again." },
+      { error: "Failed to send your request. Please try again or email us directly at service@bluestonehomellc.com." },
       { status: 500 }
     );
   }

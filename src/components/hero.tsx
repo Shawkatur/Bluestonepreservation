@@ -7,8 +7,8 @@ export function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-lawn.jpg"
-          alt="Well-maintained property lawn"
+          src="/images/house-exterior.jpg"
+          alt="Residential property maintained by Bluestone Home Solutions"
           fill
           className="object-cover"
           priority

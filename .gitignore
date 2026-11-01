@@ -9,3 +9,5 @@ next-env.d.ts
 .DS_Store
 Picture for Bluestone's Website/
 index.html
+.vercel
+.env*
